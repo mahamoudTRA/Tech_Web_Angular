@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+  <h2 class="header center">Add Todo</h2>
+  <div class="card horizontal hoverable">
+    <div class="card-stacked">
+      <form [formGroup]="todoForm"  (ngSubmit)="onSubmit()">
+      <div class="card-content">
+        <table class="bordered striped">
+          <tbody>
+            <tr>
+              <td>Titre</td>
+              <td><strong><input type="text" formControlName="titre"></strong></td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td><strong><input type="text" formControlName="description"> </strong></td>
+            </tr>
+            <tr>
+              <td>Date d'execution</td>
+              <td><em><input type="date" formControlName="dateExecution"></em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-action">        
+        <button class="btn btn-light" type="submit" [disabled]="!todoForm.valid">Ajouter</button>&nbsp;&nbsp;
+        <button class="btn btn-light" (click)="goBack()">Retour</button>   &nbsp;&nbsp;
+      </div>
+    </form>
+    </div>
+  </div>
+  </div>
+  </div>

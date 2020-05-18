@@ -1,0 +1,27 @@
+<h1 class='center'>{{title}}</h1>
+<div class='container'>
+  
+<div class="center">
+  <a href="todos/add"><button type="button" class="btn btn-light" style="margin-right: 20px;">Ajouter</button></a>
+    <button type="button" class="btn btn-light" style="margin-right: 20px;">Rafraichir</button>
+    <button type="button" class="btn btn-light" style="margin-right: 20px;">Afficher</button>
+    <button type="button" class="btn btn-light">Supprimer</button>
+</div>
+<div *ngIf="todos?.length > 0" class="row">
+<div *ngFor='let todo of todos' class="col s6 m4">
+  <div class="card horizontal" (dblclick)="selectTodo(todo)">
+    <div class="card-stacked">
+      <div class="card-content">
+        <p><b>{{ todo.titre }}</b></p>
+        <p><small>{{todo.description }}</small></p>
+        <p><small>{{ todo.dateExecution | date:"dd//MM/yyyy"}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div>
+<br/>
+</div>
+<h4 *ngIf="todos?.length < 1" class="center"> Aucune tache dans ton agenda</h4>
+</div>
